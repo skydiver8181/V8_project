@@ -22,6 +22,12 @@ try:
     button_cart = browser.find_element(By.CSS_SELECTOR, "[class='cartTitle']")
     button_cart.click()
 
+    quantity_value = browser.find_element(By.CSS_SELECTOR, "[class='j-quantity-input quantityInput']")
+    quantity = quantity_value.get_attribute("value")
+    if quantity != 0:
+        print("The item was added to the cart successful")
+    else: print("The item didn't add to the cart")
+
 finally:
     time.sleep(5)
     browser.quit()

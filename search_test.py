@@ -16,6 +16,11 @@ try:
     search_button = browser.find_element(By.CSS_SELECTOR, "[class='fr-icon3-search']")
     search_button.click()
 
+    cod_item_value = browser.find_element(By.CSS_SELECTOR, "[class='casePartCode ']")
+    cod_item = cod_item_value.get_attribute("value")
+    if cod_item == "CUK1919":
+        print("Search function works correct")
+    else: print("Search function works incorrect")
 
 finally:
     time.sleep(5)

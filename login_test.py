@@ -20,6 +20,12 @@ try:
     button_enter = browser.find_element(By.ID, "go_modal")
     button_enter.click()
 
+    user_name_value = browser.find_element(By.CSS_SELECTOR, "[class='clientName']")
+    user_name = user_name_value.get_attribute("value")
+    if user_name != "Вход":
+        print("Login function works correct")
+    else: print("Login function works incorrect")
+
 finally:
     time.sleep(3)
     browser.quit()
