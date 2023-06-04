@@ -33,4 +33,13 @@ def test_cart(driver):
     check_cart = check_text.text
     assert check_cart == 'Ваша корзина'
 
+def test_vin_request(driver):
+    vin_request_page = driver.find_element(By.CSS_SELECTOR, '#my-menu > li.menuItem.vinqu > a')
+    vin_request_page.click()
+
+    check_vin_page = driver.find_element(By.CSS_SELECTOR, 'body > div.siteWrapper > section > div > article > div.wVinquAdd > table > tbody > tr > td.vinqu-contacts-block > div.vinqu-block > p')
+    check_text_vin_page = check_vin_page.text
+    assert check_text_vin_page == 'Информация об автомобиле'
+
+
 
